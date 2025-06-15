@@ -35,7 +35,7 @@ int main(){
     printf ("O nome da Cidade representada: ");
     scanf ("%[^\n]", cidade1);
 
-    printf ("Me informe um número que represente a população dessa cidade: ");
+    printf ("Número de habitantes dessa cidade: ");
     scanf ("%d", &populacao1);
 
     printf ("Agora a área em KM dessa cidade: ");
