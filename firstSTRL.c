@@ -1,5 +1,7 @@
 #include <stdio.h>
-int main(){
+
+int main()
+{
     printf ("FirstSTRL, HELLO!\n");
 
     return 0; 
