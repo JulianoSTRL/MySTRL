@@ -25,7 +25,7 @@ int main ()
     printf ("%.2f\n", pib2);
     */
 
-    printf ("\n%.29841f\n", popdens1);
+    printf ("%.2f\n", popdens1);
     printf ("%.2f\n", popdens2);
     printf ("%.2f\n", pibpc1);
     printf ("%.2f\n", pibpc2);
