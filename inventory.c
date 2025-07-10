@@ -24,8 +24,8 @@ int main ()
     total1 = stock1 > minstock1;
     total2 = stock2 > minstock2;
 
-    printf ("O produto %s tem estoque mínimo de %u.\n", prod1, total1);
-    printf ("O produto %s tem estoque mínimo de %u.\n", prod2, total2);
+    printf ("O produto %s tem estoque mínimo de %f.\n", prod1, total1);
+    printf ("O produto %s tem estoque mínimo de %f.\n", prod2, total2);
 
     //Comparações entre os valores totais dos produtos;
 
