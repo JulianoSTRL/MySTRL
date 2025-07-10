@@ -48,9 +48,37 @@ int main ()
     double pnumber1 = 314159265358979;
     long double vpnumber1 = 3141592653589793238463;
 
-    printf ("Número preciso (double): %.15f\n", pnumber1);
-    printf ("Número muito preciso (long double): %.21Lf.\n",vpnumber1);
+    printf ("Número preciso (double): %f\n", pnumber1);
+    printf ("Número muito preciso (long double): %Lf.\n",vpnumber1);
 
+    //
 
+    int integer = 4000000000;
+    long int longint = 4000000000;
+    unsigned int unsint =4000000000;
+    unsigned long int unslongint = 4000000000;
+
+    printf ("Número inteiro: %d.\n", integer);
+    printf ("Número positivo: %u.\n", unsint);
+    printf ("Número positivo longo int: %ld.\n", longint);
+    printf ("Número positivo longo: %lu.\n", unslongint);
+    
+    //
+
+    /*
+    Trabalhando com o modificador "short"
+    */
+
+    short int shortint = 32767; //Valor máximo de "short int";
+    printf ("Número curto (short int): %d.\n", shortint);
+
+    shortint = 32768; //Valor que ultrapassa o limite de "short int";
+
+    printf ("Número curto atualizado (short int): %d.\n", shortint);
+    
+    printf ("\n*** Tamanho das variáveis ***\n");
+    printf ("Short int: %lu B - int: %lu B - long int: %lu B.\n", sizeof(short int), sizeof(int), sizeof(long int));
+    printf ("Float : %lu B - Double: %lu B - Long double: %lu B.\n", sizeof(float), sizeof(double), sizeof(long double));
+    
     return 0;
 }
