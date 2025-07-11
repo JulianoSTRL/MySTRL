@@ -6,9 +6,9 @@ int main()
 
     //Variáveis que serão inseridas pelos usuários;
 
-    int carta1, carta2, turismo1, turismo2, populacao1, populacao2;
-    float area1, area2, popdens1, popdens2;
-    double pib1, pib2, pibpc1, pibpc2;
+    int carta1, carta2, turismo1, turismo2, pop1, pop2; 
+    float area1, area2, pib1, pib2, popdens1, popdens2;
+    double pibpc1, pibpc2;
     char codigo1, codigo2;
     char estado1[50];
     char estado2[50];
@@ -35,13 +35,13 @@ int main()
     scanf  ("%[^\n]", cidade1);
 
     printf ("Número de habitantes dessa cidade: ");
-    scanf  ("%d", &populacao1);
+    scanf  ("%d", &pop1);
 
     printf ("Agora a área em KM dessa cidade: ");
     scanf  ("%f", &area1);
 
     printf ("Me informe o PIB dessa cidade: ");
-    scanf  ("%lf", &pib1);
+    scanf  ("%f", &pib1);
 
     printf ("Por último, quantos pontos turísticos existem nessa cidade: ");
     scanf  ("%d", &turismo1);
@@ -63,21 +63,21 @@ int main()
     scanf  ("%[^\n]", cidade2);
 
     printf ("Número de habitantes dessa cidade: ");
-    scanf  ("%d", &populacao2);
+    scanf  ("%d", &pop2);
 
     printf ("Agora a área em KM dessa cidade: ");
     scanf  ("%f", &area2);
 
     printf ("Me informe o PIB dessa cidade: ");
-    scanf  ("%lf", &pib2);
+    scanf  ("%f", &pib2);
 
     printf ("Por último, quantos pontos turísticos existem nessa cidade: ");
     scanf  ("%d", &turismo2);
 
-    popdens1 = (float) populacao1 / area1;
-    popdens2 = (float) populacao2 / area2;
-    pibpc1   = (pib1 * 1000000000.0) / populacao1;
-    pibpc2   = (pib2 * 1000000000.0) / populacao2;
+    popdens1 = pop1 / area1;
+    popdens2 = pop2 / area2;
+    pibpc1   = (pib1 * 1000000000.0) / pop1;
+    pibpc2   = (pib2 * 1000000000.0) / pop2;
 
     //"Resultado dos dados da carta";
 
@@ -86,12 +86,12 @@ int main()
     printf ("Código: %c%d.\n",codigo1, carta1);
     printf ("Estado: %s.\n", estado1);
     printf ("Cidade: %s.\n", cidade1);
-    printf ("População: %d.\n", populacao1);
-    printf ("Área: %.3f km².\n", area1);
+    printf ("População: %d.\n", pop1);
+    printf ("Área: %.2f km².\n", area1);
     printf ("PIB: %.2f bilhões de reais.\n", pib1);
     printf ("Pontos turísticos: %d.\n", turismo1);
     printf ("Densidade populacional: %.2f hab/km².\n", popdens1);
-    printf ("PIB Per Capita: %.2f reais.\n", pibpc1);
+    printf ("PIB Per Capita: %.2f mil reais.\n", pibpc1);
 
     //"Resultado Segunda Carta"
 
@@ -101,12 +101,31 @@ int main()
     printf ("Código: %c%d.\n",codigo2, carta2);
     printf ("Estado: %s.\n", estado2);
     printf ("Cidade: %s.\n", cidade2);
-    printf ("População: %d.\n", populacao2);
-    printf ("Área: %.3f km².\n", area2);
+    printf ("População: %d.\n", pop2);
+    printf ("Área: %.2f km².\n", area2);
     printf ("PIB: %.2f bilhões de reais.\n", pib2);
     printf ("Pontos turísticos: %d.\n", turismo2);
     printf ("Densidade populacional: %.2f hab/km².\n", popdens2);
-    printf ("PIB Per Capita: %.2f reais.\n", pibpc2);
-   
+    printf ("PIB Per Capita: %.2f mil reais.\n", pibpc2);
+
+    //Comparações entre as cartas
+
+    printf ("\n--- Comparações entre as cartas ---\n");
+
+    int popbtl, areabtl, pibbtl, turismobtl, popdensbtl, pibpcbtl;
+
+    popbtl = pop1 > pop2;
+    areabtl = area1 > area2;
+    pibbtl = pib1 > pib2;
+    turismobtl = turismo1 > turismo2;
+    popdensbtl = popdens1 > popdens2;
+    pibpcbtl = pibpc1 > pibpc2;
+
+    printf ("População: Carta 1 venceu? (%d).\n", popbtl);
+    printf ("Área: Carta 1 venceu? (%d).\n", areabtl);
+    printf ("PIB: Carta 1 venceu? (%d).\n", pibbtl);
+    printf ("Pontos turísticos: Carta 1 venceu? (%d).\n", turismobtl);
+    printf ("Densidade populacional: Carta 1 venceu? (%d).\n", popdensbtl);
+    printf ("PIB Per Capita: Carta 1 venceu? (%d).\n", pibpcbtl);
     return 0;
 }
