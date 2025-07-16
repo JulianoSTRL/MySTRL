@@ -4,9 +4,9 @@ int main()
 {
     // '- Estrutura simples de 'if else' para entendimento
 
-    float val1 = 75.0, val2 = 75.0;
+    float val1 = 75.0, val2 = 76.0;
 
-    if (val1 == val2)
+    if (val1 >= val2)
         printf ("Os valores são iguais.\n");
     else
         printf ("Os valores são diferentes.\n");
