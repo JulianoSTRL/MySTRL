@@ -47,7 +47,7 @@ int main()
     scanf  ("%d", &turismo1);
     
 
-    //Dados da segunda carta
+    //Entrada de dados da segunda carta;
 
     printf ("\nLetra entre A e H e número entre 1 e 4, sem repetir os dados já usados:\n");
     scanf  (" %c%d", &codigo2, &carta2);
@@ -79,21 +79,21 @@ int main()
     pibpc1   = (pib1 * 1000000000.0) / pop1;
     pibpc2   = (pib2 * 1000000000.0) / pop2;
 
-    //"Resultado dos dados da carta";
+    //Resultado Primeira Carta;
 
     printf ("\n--- Sua primeira carta ficou assim ---\n");
     printf ("Carta 1:\n");
     printf ("Código: %c%d.\n",codigo1, carta1);
     printf ("Estado: %s.\n", estado1);
     printf ("Cidade: %s.\n", cidade1);
-    printf ("População: %d.\n", pop1);
+    printf ("População: %d habitantes.\n", pop1);
     printf ("Área: %.2f km².\n", area1);
     printf ("PIB: %.2f bilhões de reais.\n", pib1);
     printf ("Pontos turísticos: %d.\n", turismo1);
     printf ("Densidade populacional: %.2f hab/km².\n", popdens1);
     printf ("PIB Per Capita: %.2f mil reais.\n", pibpc1);
 
-    //"Resultado Segunda Carta"
+    //Resultado Segunda Carta;
 
     
     printf ("\n--- Sua segunda carta ficou assim ---\n");
@@ -101,31 +101,112 @@ int main()
     printf ("Código: %c%d.\n",codigo2, carta2);
     printf ("Estado: %s.\n", estado2);
     printf ("Cidade: %s.\n", cidade2);
-    printf ("População: %d.\n", pop2);
+    printf ("População: %d habitantes.\n", pop2);
     printf ("Área: %.2f km².\n", area2);
     printf ("PIB: %.2f bilhões de reais.\n", pib2);
     printf ("Pontos turísticos: %d.\n", turismo2);
     printf ("Densidade populacional: %.2f hab/km².\n", popdens2);
     printf ("PIB Per Capita: %.2f mil reais.\n", pibpc2);
 
-    //Comparações entre as cartas
+    //Comparações com if else entre as cartas;
 
     printf ("\n--- Comparações entre as cartas ---\n");
 
     int popbtl, areabtl, pibbtl, turismobtl, popdensbtl, pibpcbtl;
+    /*
+    Cada if - else separa os atributos das cartas
+    Compara e apresenta os valores informados 
+    Devolve uma resposta diferente se x > y, ou x < y;
+    */
 
-    popbtl = pop1 > pop2;
-    areabtl = area1 > area2;
-    pibbtl = pib1 > pib2;
-    turismobtl = turismo1 > turismo2;
-    popdensbtl = popdens1 > popdens2;
-    pibpcbtl = pibpc1 > pibpc2;
+    //População;
 
-    printf ("População: Carta 1 venceu? (%d).\n", popbtl);
-    printf ("Área: Carta 1 venceu? (%d).\n", areabtl);
-    printf ("PIB: Carta 1 venceu? (%d).\n", pibbtl);
-    printf ("Pontos turísticos: Carta 1 venceu? (%d).\n", turismobtl);
-    printf ("Densidade populacional: Carta 1 venceu? (%d).\n", popdensbtl);
-    printf ("PIB Per Capita: Carta 1 venceu? (%d).\n", pibpcbtl);
+    if (pop1 > pop2)
+    {
+        printf ("\nPopulação Carta 1: %d habitantes.\n", pop1);
+        printf ("População Carta 2: %d habitantes.\n", pop2);
+        printf ("Resultado = Carta 1 venceu!\n");
+    }
+    else
+    {
+        printf ("\nPopulação Carta 1: %d habitantes.\n", pop1);
+        printf ("População Carta 2: %d habitantes.\n", pop2);
+        printf ("Resultado = Carta 2 venceu!\n");
+    }
+
+    //Área;
+
+    if (area1 > area2)
+    {
+        printf ("\nÁrea Carta 1: %.2f km².\n", area1);
+        printf ("Área Carta 2: %.2f km².\n", area2);
+        printf ("Resultado = Carta 1 venceu!\n");
+    }
+    else
+    {
+        printf ("\nÁrea Carta 1: %.2f km².\n", area1);
+        printf ("Área Carta 2: %.2f km².\n", area2);
+        printf ("Resultado = Carta 2 venceu!\n");
+    }
+
+    //PIB;
+
+    if (pib1 > pib2)
+    {
+        printf ("\nPIB Carta 1: %.2f bilhões de reais.\n", pib1);
+        printf ("PIB Carta 2: %.2f bilhões de reais.\n", pib2);
+        printf ("Resultado = Carta 1 venceu!\n");
+    }
+    else
+    {
+        printf ("\nPIB Carta 1: %.2f bilhões de reais.\n", pib1);
+        printf ("PIB Carta 2: %.2f bilhões de reais.\n", pib2);
+        printf ("Resultado = Carta 2 venceu!\n");
+    }
+
+    //Turismo;
+
+    if (turismo1 > turismo2)
+    {
+        printf ("\nPontos Turisticos Carta 1: %d atrações.\n", turismo1);
+        printf ("Pontos Turisticos Carta 2: %d atrações.\n", turismo2);
+        printf ("Resultado = Carta 1 venceu!\n");
+    }
+    else
+    {
+        printf ("\nPontos Turisticos Carta 1: %d atrações.\n", turismo1);
+        printf ("Pontos Turisticos Carta 2: %d atrações.\n", turismo2);
+        printf ("Resultado = Carta 2 venceu!\n");
+    }
+
+    //Densidade Populacional;
+
+    if (popdens1 < popdens2)
+    {
+        printf ("\nDensidade Populacional Carta 1: %.2f hab/km².\n", popdens1);
+        printf ("Densidade Populacional Carta 2: %.2f hab/km².\n", popdens2);
+        printf ("Resultado: Carta 1 venceu!\n");
+    }
+    else
+    {
+        printf ("\nDensidade Populacional Carta 1: %.2f hab/km².\n", popdens1);
+        printf ("Densidade Populacional Carta 2: %.2f hab/km².\n", popdens2);
+        printf ("Resultado: Carta 2 venceu!\n");
+    }
+
+    //PIB Per Capita;
+
+    if (pibpc1 > pibpc2)
+    {
+        printf ("\nPIB Per Capita Carta 1: %.2f mil reais.\n", pibpc1);
+        printf ("PIB Per Capita Carta 2: %.2f mil reais.\n", pibpc2);
+        printf ("Resultado: Carta 1 Venceu!\n");
+    }
+    else
+    {
+        printf ("\nPIB Per Capita Carta 1: %.2f mil reais.\n", pibpc1);
+        printf ("PIB Per Capita Carta 2: %.2f mil reais.\n", pibpc2);
+        printf ("Resultado: Carta 2 Venceu!\n");
+    }
     return 0;
 }
