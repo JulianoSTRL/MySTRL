@@ -45,17 +45,28 @@ int main ()
     Os valores das variáveis se invertem!
     */
 
-    int e = 1;
-
-    if (!e)
+    int e = -10;
+  
+    if (!e) 
     {
-        printf ("\ne = %d\n", e);
-        printf ("A variável 'e' é zero.\n");
+        printf ("\nA variável 'e' é negativa.\n");
     }
     else
     {
-        printf ("\ne = %d\n", e);
-        printf ("A variável 'e' não é zero.\n");
+        printf ("\nA variável 'e' é positiva.\n");
+    }
+
+    //Teste invertendo os valores
+
+        int f = 10;
+    
+    if (!f > 0)
+    {
+        printf ("\nA variável 'f' é negativa.\n");
+    }
+    else
+    {
+        printf ("\nA variável 'f' é positiva.\n");
     }
 
     return 0;
