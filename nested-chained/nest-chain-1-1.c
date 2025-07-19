@@ -1,36 +1,34 @@
 #include <stdio.h>
 
 int main ()
-
-//Encadeamentos de condições e resposta de acordo com a condição verdadeira.
-
 {
-    int age;
+    int num;
 
-    printf ("Digite sua idade: ");
-    scanf  ("%d", &age);
+    printf ("Digite um número: ");
+    scanf  ("%d", &num);
 
-    if (age < 12)
+    // Testando se o número atende os critérios necessários;
+    if (num > 0 && num < 20)
     {
-        printf ("Você é uma criança.\n");
-    }   
-        else if (age >= 12 && age <= 18)
+    printf ("Positivo.\n");
+    }
+        else if (num == 0)
         {
-            printf ("Você é um adolescente.\n");
-
+        printf ("Número zero.\n");
         }
-            else if (age >= 18 && age <= 60)
-            {
-                printf ("Você é um adulto.\n");
-            }
-                else if (age >= 60 && age <= 100)
-                {
-                    printf ("Você é um idoso.\n");
-                }
     else
     {
-        printf ("You are O L D!\n");
+    printf ("Negativo.\n");
     }
 
-    return 0;
+    // Testando se o número é par;
+    if (num % 2 == 0)
+    {
+    printf ("Número é par.\n");
+    }
+    else
+    {
+    printf ("Número é impar.\n");
+    }
+return 0;
 }
