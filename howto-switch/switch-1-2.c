@@ -14,14 +14,14 @@ int main ()
         printf ("2. Fazer depósito.\n");
         printf ("3. Fazer saque.\n");
         printf ("0. Encerrar programa.\n");
-        printf ("Opção: ");
+        printf ("\nOpção: ");
         scanf  ("%d", &opt);
 
         switch (opt)
         {
     //
             case 1:
-                printf ("\nSeu saldo atual é de %.2f$.\n", saldoatual);
+                printf ("\nSaldo atual: %.2fR$.\n", saldoatual);
             break;
     
     //
@@ -31,14 +31,14 @@ int main ()
 
                 printf ("\nConfirmar o valor do depósito?\n");
                 printf ("1. Sim\n2. Não\n");
-                printf ("Opção: ");
+                printf ("\nOpção: ");
                 scanf  ("%d", &depopt1);
                     switch (depopt1)
                     {
                         case 1:
                             saldoatual += depin;
                             printf ("\nDepósito de %.2fR$ confirmado com sucesso.\n", depin);
-                            printf ("Seu novo saldo é: %.2f R$.\n", saldoatual);
+                            printf ("Saldo atual: %.2fR$.\n", saldoatual);
                         break;
 
                         //    
@@ -67,14 +67,14 @@ int main ()
                 {
                     printf ("\nConfirmar o valor do saque?\n");
                     printf ("1. Sim\n2. Não\n");
-                    printf ("Opção: ");
+                    printf ("\nOpção: ");
                     scanf  ("%d", &depopt2);
                         switch (depopt2)
                         {
                         case 1:
                             saldoatual -= depout;
-                            printf ("\nSaque de R$ %.2f realizado com sucesso.\n", depout);
-                            printf ("Saldo atual: %.2f R$.\n", saldoatual);
+                            printf ("\nSaque de %.2fR$ realizado com sucesso.\n", depout);
+                            printf ("Saldo atual: %.2fR$.\n", saldoatual);
                         break;
 
                         case 2:
