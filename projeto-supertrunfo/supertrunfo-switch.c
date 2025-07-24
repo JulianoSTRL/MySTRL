@@ -1,60 +1,77 @@
 #include <stdio.h>
+#include <locale.h>
+#include <string.h>
 
 int main ()
 {
-    //Variáveis com dados fixos;
-    char pais1[50] = "China";
-    char pais2[50] = "Japão";
+    setlocale(LC_ALL, "");
+
+    //Variáveis para entrada de dados;
+
+    char pais1[49], pais2[49];
+    long long pop1, pop2;
+    double area1, area2, pib1, pib2;
+    int tour1, tour2;
     
-    long long pop1 = 1410000000;
-    long long pop2 = 123000000;
+    double dens1, dens2;
 
-    double area1 = 9596960, area2 = 377975, pib1 = 17.5 , pib2 = 4.4 ;
+    printf ("\n---Bem Vindo ao Super Trunfo: Escolhas---\n");
+    printf ("\nAqui faremos a configuração das cartas do jogo\n");
 
-    int tour1 = 6, tour2 = 6;
+    //Dados inseridos pelo usuário para a Carta #1;
+
+    printf ("\nInsira os dados da Carta #1");
+
+    printf ("\nPaís: ");
+    scanf  (" %49[^\n]", pais1);
     
-    double dens1 = pop1 / area1, dens2 = pop2 / area2;
+    getchar ();
 
-    /*Atributos de cada País;
+    printf ("População: ");
+    scanf  ("%lld", &pop1);
 
-    //1.País;
-    printf  ("\n--- País ---\n");
-    printf ("\nPaís 1: %s", pais1);
-    printf ("\nPaís 2: %s\n", pais2);
+    printf ("Área: ");
+    scanf  ("%lf", &area1);
 
-    //2.População;
-    printf ("\n--- População ---\n");
-    printf ("\nPopulação China: %.2f bilhões", pop1 / 1e9);
-    printf ("\nPopulação Japão: %.2f milhões\n", pop2 / 1e6);
+    printf ("PIB: ");
+    scanf  ("%lf", &pib1);
 
-    //3.Área;
-    printf ("\n--- Área ---\n");
-    printf ("\nTerritório China: %.0fkm²", area1);
-    printf ("\nTerritório Japão: %.0fkm²\n", area2);
+    printf ("Nº de Pontos Turísticos: ");
+    scanf  ("%d", &tour1);
 
-    //4.PIB;
-    printf ("\n--- PIB ---\n");
-    printf ("\nPIB China: US$ %.2f trilhões", pib1);
-    printf ("\nPIB Japão: US$ %.2f trilhões\n", pib2);
+    //
+    printf ("\nPerfeito, agora insira os dados segunda carta\n");
 
-    //5.Pontos Turísticos;
-    printf ("\n--- Pontos Turísticos ---\n");
-    printf ("\nPontos Turísticos China: %d", tour1);
-    printf ("\nPontos Turísticos Japão: %d\n", tour2);
+    //Dados inseridos pelo usuário para a Carta #2;
     
-    //6.Densidade Demográfica;
-    printf ("\n--- Densidade Demográfica ---\n");
-    printf ("\nDensidade Demográfica China: %.2f hab/km²", dens1);
-    printf ("\nDensidade Demográfica Japão: %.2f hab/km²\n", dens2);
-    */
+    printf ("\nInsira os dados da Carta #2");
+
+    printf ("\nPaís: ");
+    scanf  (" %49[^\n]", pais2);
+    
+    getchar();
+
+    printf ("População: ");
+    scanf  ("%lld", &pop2);
+
+    printf ("Área: ");
+    scanf  ("%lf", &area2);
+
+    printf ("PIB: ");
+    scanf  ("%lf", &pib2);
+    
+    printf ("Nº de Pontos Turísticos: ");
+    scanf  ("%d", &tour2);
+
+    //Cálculo da Densidade demográfica;
+    
+    dens1 = pop1 / area1;
+    dens2 = pop2 / area2;
 
     //Escolha do atributo para comparações
 
     int atb;
-
-    printf ("\n---Bem Vindo ao Super Trunfo: Escolhas---\n");
-    printf ("\nOs países batalhando serão: China x Japão\n");
-    printf ("\nEscolha um atributo de comparação entre os países:\n");
+ 
     printf ("1. População\n");
     printf ("2. Área\n");
     printf ("3. PIB\n");
@@ -68,32 +85,32 @@ int main ()
     {
     case 1:
         printf ("\n--- População ---\n");
-        printf ("População China: %.2f bilhões\n", pop1 / 1e9);
-        printf ("População Japão: %.2f milhões\n", pop2 / 1e6);
+        printf ("População %s: %.2f bilhões\n", pais1, pop1 / 1e9);
+        printf ("População %s: %.2f milhões\n", pais2, pop2 / 1e6);
         break;
 
     case 2:
         printf ("\n--- Área ---\n");
-        printf ("Território China: %.0f km²\n", area1);
-        printf ("Território Japão: %.0f km²\n", area2);
+        printf ("Território %s: %.0f km²\n", pais1, area1);
+        printf ("Território %s: %.0f km²\n", pais2, area2);
         break;
 
     case 3:
         printf ("\n--- PIB ---\n");
-        printf ("PIB China: US$ %.2f trilhões\n", pib1);
-        printf ("PIB Japão: US$ %.2f trilhões\n", pib2);
+        printf ("PIB %s: US$ %.2f trilhões\n", pais1, pib1);
+        printf ("PIB %s: US$ %.2f trilhões\n", pais2, pib2);
         break;
 
     case 4:
         printf ("\n--- Pontos Turísticos ---\n");
-        printf ("Pontos Turísticos China: %d\n", tour1);
-        printf ("Pontos Turísticos Japão: %d\n", tour2);
+        printf ("Pontos Turísticos %s: %d\n", pais1, tour1);
+        printf ("Pontos Turísticos %s: %d\n", pais2, tour2);
         break;
 
     case 5:
         printf ("\n--- Densidade Demográfica ---\n");
-        printf ("Densidade China: %.2f hab/km²\n", dens1);
-        printf ("Densidade Japão: %.2f hab/km²\n", dens2);
+        printf ("Densidade %s: %.2f hab/km²\n", pais1, dens1);
+        printf ("Densidade %s: %.2f hab/km²\n", pais2, dens2);
         break;
 
     default:
@@ -102,45 +119,54 @@ int main ()
     }
 
     //Resultados;
+
      printf("\n--- Resultado da Comparação ---\n");
 
     switch (atb)
     {
     case 1:
         if (pop1 > pop2)
-            printf ("China vence em população!\n");
+            printf ("%s vence em População!\n", pais1);
+        else if (pop2 > pop1)
+            printf ("%s vence em População!\n", pais2);
         else
-            printf ("Japão vence em população!\n");
+            printf ("Empate!\n");
         break;
 
     case 2:
         if (area1 > area2)
-            printf ("China vence em território!\n");
+            printf ("%s vence em Território!\n", pais1);
+        else if (area2 > area1)
+            printf ("%s vence em Território", pais2);
         else
-            printf ("Japão vence em território!\n");
+            printf ("Empate!\n");
         break;
 
     case 3:
         if (pib1 > pib2)
-            printf ("China vence em PIB!\n");
+            printf ("%s vence em PIB!\n", pais1);
+        else if (pib2 > pib1)
+            printf ("%s vence em PIB\n", pais2);   
         else
-            printf ("Japão vence em PIB!\n");
+            printf ("Empate!\n");
         break;
 
     case 4:
         if (tour1 > tour2)
-            printf ("China vence em pontos turísticos!\n");
+            printf ("%s vence em pontos turísticos!\n", pais1);
         else if (tour2 > tour1)
-            printf ("Japão vence em pontos turísticos!\n");
+            printf ("%s vence em pontos turísticos!\n", pais2);
         else
-            printf ("Empate em pontos turísticos!\n");
+            printf ("Empate!\n");
         break;
 
     case 5:
         if (dens1 > dens2)
-            printf ("China tem maior densidade demográfica!\n");
+            printf ("%s tem maior densidade demográfica!\n", pais1);
+        else if (dens2 > dens1)
+            printf ("%s tem maior densidade demográfica!\n", pais2);
         else
-            printf ("Japão tem maior densidade demográfica!\n");
+            printf ("Empate!\n");
         break;
     }
 
