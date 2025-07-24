@@ -6,7 +6,7 @@ int main ()
 {
     setlocale(LC_ALL, "");
 
-    //Variáveis para entrada de dados;
+    //Variáveis para entrada de Dados;
 
     char pais1[49], pais2[49];
     long long pop1, pop2;
