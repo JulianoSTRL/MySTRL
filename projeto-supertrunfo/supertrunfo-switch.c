@@ -1,14 +1,13 @@
 #include <stdio.h>
-#include <locale.h>
 #include <string.h>
 
 int main ()
 {
-    setlocale(LC_ALL, "");
 
     //Variáveis para entrada de Dados;
 
-    char pais1[49], pais2[49];
+    char pais1[50];
+    char pais2[50];
     long long pop1, pop2;
     double area1, area2, pib1, pib2;
     int tour1, tour2;
@@ -20,11 +19,10 @@ int main ()
 
     //Dados inseridos pelo usuário para a Carta #1;
 
-    printf ("\nInsira os dados da Carta #1");
+    printf ("\n--- Insira os dados da Carta #1 ---\n");
 
     printf ("\nPaís: ");
-    scanf  (" %49[^\n]", pais1);
-    
+    scanf  ("%49[^\n]", pais1);
     getchar ();
 
     printf ("População: ");
@@ -33,7 +31,7 @@ int main ()
     printf ("Área: ");
     scanf  ("%lf", &area1);
 
-    printf ("PIB: ");
+    printf ("PIB (em trilhões de dólares): ");
     scanf  ("%lf", &pib1);
 
     printf ("Nº de Pontos Turísticos: ");
@@ -44,12 +42,11 @@ int main ()
 
     //Dados inseridos pelo usuário para a Carta #2;
     
-    printf ("\nInsira os dados da Carta #2");
+    printf ("\n--- Insira os dados da Carta #2 ---\n");
 
     printf ("\nPaís: ");
     scanf  (" %49[^\n]", pais2);
-    
-    getchar();
+    getchar ();
 
     printf ("População: ");
     scanf  ("%lld", &pop2);
@@ -57,7 +54,7 @@ int main ()
     printf ("Área: ");
     scanf  ("%lf", &area2);
 
-    printf ("PIB: ");
+    printf ("PIB (em trilhões de dólares): ");
     scanf  ("%lf", &pib2);
     
     printf ("Nº de Pontos Turísticos: ");
@@ -71,13 +68,13 @@ int main ()
     //Escolha do atributo para comparações
 
     int atb;
- 
-    printf ("1. População\n");
+    printf ("\n--- Escolha o atributo para comparar as cartas ---\n");
+    printf ("\n1. População\n");
     printf ("2. Área\n");
     printf ("3. PIB\n");
     printf ("4. Pontos Turísticos\n");
     printf ("5. Densidade Demográfica\n");
-    printf ("Opção: ");
+    printf ("\nOpção: ");
     scanf  ("%d", &atb);
 
     // Exibição do atributo escolhido
@@ -85,8 +82,8 @@ int main ()
     {
     case 1:
         printf ("\n--- População ---\n");
-        printf ("População %s: %.2f bilhões\n", pais1, pop1 / 1e9);
-        printf ("População %s: %.2f milhões\n", pais2, pop2 / 1e6);
+        printf ("População %s: %f\n", pais1, pop1 / 1e9);
+        printf ("População %s: %f\n", pais2, pop2 / 1e6);
         break;
 
     case 2:
@@ -137,7 +134,7 @@ int main ()
         if (area1 > area2)
             printf ("%s vence em Território!\n", pais1);
         else if (area2 > area1)
-            printf ("%s vence em Território", pais2);
+            printf ("%s vence em Território\n", pais2);
         else
             printf ("Empate!\n");
         break;
