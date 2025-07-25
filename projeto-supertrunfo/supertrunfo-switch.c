@@ -3,19 +3,18 @@
 
 int main ()
 {
-
+    char replay;
     //Variáveis para entrada de Dados;
-
     char pais1[50];
     char pais2[50];
-    long long pop1, pop2;
     double area1, area2, pib1, pib2;
+    long long int pop1, pop2;
     int tour1, tour2;
     
     double dens1, dens2;
 
     printf ("\n---Bem Vindo ao Super Trunfo: Escolhas---\n");
-    printf ("\nAqui faremos a configuração das cartas do jogo\n");
+    printf ("\nAqui faremos as configurações das cartas do jogo\n");
 
     //Dados inseridos pelo usuário para a Carta #1;
 
@@ -25,16 +24,16 @@ int main ()
     scanf  ("%49[^\n]", pais1);
     getchar ();
 
-    printf ("População: ");
+    printf ("População (em números absolutos): ");
     scanf  ("%lld", &pop1);
 
-    printf ("Área: ");
+    printf ("Área (em km²): ");
     scanf  ("%lf", &area1);
 
-    printf ("PIB (em trilhões de dólares): ");
+    printf ("PIB (em trilhões USD): ");
     scanf  ("%lf", &pib1);
 
-    printf ("Nº de Pontos Turísticos: ");
+    printf ("Quantidade de Pontos Turísticos: ");
     scanf  ("%d", &tour1);
 
     //
@@ -48,16 +47,16 @@ int main ()
     scanf  (" %49[^\n]", pais2);
     getchar ();
 
-    printf ("População: ");
+    printf ("População (em números absolutos): ");
     scanf  ("%lld", &pop2);
 
-    printf ("Área: ");
+    printf ("Área (em km²): ");
     scanf  ("%lf", &area2);
 
-    printf ("PIB (em trilhões de dólares): ");
+    printf ("PIB (em trilhões USD): ");
     scanf  ("%lf", &pib2);
     
-    printf ("Nº de Pontos Turísticos: ");
+    printf ("Número de Pontos Turísticos: ");
     scanf  ("%d", &tour2);
 
     //Cálculo da Densidade demográfica;
@@ -66,6 +65,9 @@ int main ()
     dens2 = pop2 / area2;
 
     //Escolha do atributo para comparações
+    
+    while (1)
+    {
 
     int atb;
     printf ("\n--- Escolha o atributo para comparar as cartas ---\n");
@@ -74,16 +76,20 @@ int main ()
     printf ("3. PIB\n");
     printf ("4. Pontos Turísticos\n");
     printf ("5. Densidade Demográfica\n");
+    printf ("0. Sair da comparação\n");
     printf ("\nOpção: ");
     scanf  ("%d", &atb);
-
+    getchar ();
+    
+    if (atb == 0)
+    break;
     // Exibição do atributo escolhido
     switch (atb)
     {
     case 1:
         printf ("\n--- População ---\n");
-        printf ("População %s: %f\n", pais1, pop1 / 1e9);
-        printf ("População %s: %f\n", pais2, pop2 / 1e6);
+        printf ("População %s: %lld\n", pais1, pop1);
+        printf ("População %s: %lld\n", pais2, pop2);
         break;
 
     case 2:
@@ -94,8 +100,8 @@ int main ()
 
     case 3:
         printf ("\n--- PIB ---\n");
-        printf ("PIB %s: US$ %.2f trilhões\n", pais1, pib1);
-        printf ("PIB %s: US$ %.2f trilhões\n", pais2, pib2);
+        printf ("PIB %s: US$ %.1f trilhões\n", pais1, pib1 / 1e12);
+        printf ("PIB %s: US$ %.1f trilhões\n", pais2, pib2 / 1e12);
         break;
 
     case 4:
@@ -112,7 +118,7 @@ int main ()
 
     default:
         printf ("\nAtributo inválido!\n");
-        return 1;
+        continue;
     }
 
     //Resultados;
@@ -134,7 +140,7 @@ int main ()
         if (area1 > area2)
             printf ("%s vence em Território!\n", pais1);
         else if (area2 > area1)
-            printf ("%s vence em Território\n", pais2);
+            printf ("%s vence em Território!\n", pais2);
         else
             printf ("Empate!\n");
         break;
@@ -143,7 +149,7 @@ int main ()
         if (pib1 > pib2)
             printf ("%s vence em PIB!\n", pais1);
         else if (pib2 > pib1)
-            printf ("%s vence em PIB\n", pais2);   
+            printf ("%s vence em PIB!\n", pais2);   
         else
             printf ("Empate!\n");
         break;
@@ -158,14 +164,15 @@ int main ()
         break;
 
     case 5:
-        if (dens1 > dens2)
-            printf ("%s tem maior densidade demográfica!\n", pais1);
-        else if (dens2 > dens1)
-            printf ("%s tem maior densidade demográfica!\n", pais2);
+        if (dens1 < dens2)
+            printf ("%s tem menor densidade demográfica!\n", pais1);
+        else if (dens2 < dens1)
+            printf ("%s tem menor densidade demográfica!\n", pais2);
         else
             printf ("Empate!\n");
         break;
     }
-
-    return 0;
+}
+ printf ("\n--- Obrigado por jogar! ---\n");
+return 0;
 }
