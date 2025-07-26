@@ -15,6 +15,7 @@ usuário digita as notas então sistema retorna a média;
 determinar status
 
 usuário digita a média então sistema informa se foi aprovado ou não
+
 */
 
 int main()
