@@ -22,9 +22,9 @@ int main()
     //Variáveis de valores adicionados pelo usuário
     // While que mantém em repetição para cálculo de média e info sobre aprovação;
 
-    int opt, exec = 1, keepon;
+    int opt, exec = 1;
     float soma, nota1, nota2, nota3, media = -1;
-while(exec == 1)
+while (exec == 1)
 {
     printf ("\n--- Menu de Gerenciamento de Notas ---\n");
     printf ("%25s\n", "Opções\n");
@@ -53,10 +53,10 @@ while(exec == 1)
         break;
 
         case 2:
-            printf("\n%28s", "Determinar Status\n");
+            printf ("\n%28s", "Determinar Status\n");
             if (media < 0) 
             {
-                printf("\nA média ainda não foi calculada. Use a opção 1 primeiro.\n");
+                printf ( "\nA média ainda não foi calculada. Use a opção 1 primeiro.\n");
                 continue;
             }
             else
@@ -65,7 +65,7 @@ while(exec == 1)
                 (media >= 6.0)? "\nParabéns, você foi aprovado!\n" :
                 (media >= 4.0)? "\nVocê está de recuperação.\n" :
                                 "\nVocê está reprovado.\n";
-                printf("Média: %.1f\n%s\n", media, mensagem);
+                printf ("Média: %.1f\n%s\n", media, mensagem);
                 }
                 break;
             
@@ -100,7 +100,7 @@ while(exec == 1)
                 (media >= 6.0)? "\nParabéns, você foi aprovado!\n" :
                 (media >= 4.0)? "\nVocê está de recuperação.\n" :
                                 "\nVocê está reprovado.\n";
-                printf("Média: %.1f\n%s\n", media, mensagem);
+                printf ("Média: %.1f\n%s\n", media, mensagem);
             }
         
             }
