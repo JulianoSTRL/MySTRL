@@ -9,7 +9,7 @@ int main (){
     //Gerar número aleatório
 
     srand(time(0));
-    cpu = rand() % 100+ 1; //Gera um número entre 1 e 100;
+    cpu = rand() % 100 + 1; //Gera um número entre 1 e 100;
 
     //Início do jogo;
 
@@ -20,31 +20,35 @@ int main (){
     printf ("I. Igual\n");
     scanf  ("%c", &comp);
 
-    printf ("\nDigite um número que possa ser maior: ");
+    printf ("\nDigite um número: ");
     scanf  ("%d", &pl);
-    printf ("\nO número do computador é: %d\n", cpu);
 
 
     switch (comp)
     {
         case 'M':
         case 'm':
-        printf ("Você escolheu a opção 'Maior'\n");
-        result = pl > cpu ? 3 : 0;
+        printf ("\nVocê escolheu a opção 'Maior'\n");
+        result = pl > cpu ? 1 : 0;
+        printf ("\nO número do computador é: %d\n", cpu);
         printf (result ? "Você Acertou!\n" : "Voce Errou!\n");
 
         break;
         
         case 'N':
         case 'n':
-        printf ("Você escolheu a opção 'Menor'\n");
+        printf ("\nVocê escolheu a opção 'Menor'\n");
         result = pl < cpu ? 1 : 0;
+        printf ("\nO número do computador é: %d\n", cpu);
+        printf (result ? "Você Acertou!\n" : "Voce Errou!\n");
         break;
 
         case 'I':
         case 'i':
-        printf ("Você escolheu a opção 'Igual'\n");
-        result = pl = cpu ? 1 : 0;
+        printf ("\nVocê escolheu a opção 'Igual'\n");
+        result = pl == cpu ? 1 : 0;
+        printf ("\nO número do computador é: %d\n", cpu);
+        printf (result ? "Você Acertou!\n" : "Voce Errou!\n");
         break;
 
         default:
