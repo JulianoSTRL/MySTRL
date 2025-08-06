@@ -44,9 +44,9 @@ int main ()
     //Dados inseridos pelo usuário para a Carta #2;    
     printf ("\n--- Insira os dados da Carta #2 ---\n");
 
+    getchar ();
     printf ("\nPaís: ");
     scanf  ("%49[^\n]", pais2);
-    getchar ();
 
     printf ("População (em números absolutos): ");
     scanf  ("%lld", &pop2);
@@ -129,45 +129,38 @@ int main ()
     switch (atb)
     {
     case 1:
-        respop = pop1 > pop2 ? 1:0;
-            printf (respop? "%s vence em População!\n" : "%s vence em População!\n", pais1, pais2);
-            printf ("%s vence em População!\n", pais2);
+    
+        if (pop1 != pop2)
+            printf("%s vence em População!\n", (pop1 > pop2) ? pais1 : pais2);
         else
-            printf ("Empate!\n");
+            printf("Empate!\n");
         break;
 
+
     case 2:
-        if (area1 > area2)
-            printf ("%s vence em Território!\n", pais1);
-        else if (area2 > area1)
-            printf ("%s vence em Território!\n", pais2);
+        if (area1 != area2)
+            printf ("%s vence em Território!\n", (area1 > area2) ? pais1 : pais2);
         else
             printf ("Empate!\n");
         break;
 
     case 3:
-        if (pib1 > pib2)
-            printf ("%s vence em PIB!\n", pais1);
-        else if (pib2 > pib1)
-            printf ("%s vence em PIB!\n", pais2);   
+        if (pib1 != pib2)
+            printf ("%s vence em PIB!\n", (pib1 > pib2) ? pais1 : pais2);   
         else
             printf ("Empate!\n");
         break;
 
     case 4:
-        if (tour1 > tour2)
-            printf ("%s vence em pontos turísticos!\n", pais1);
-        else if (tour2 > tour1)
-            printf ("%s vence em pontos turísticos!\n", pais2);
+        if (tour1 != tour2)
+            printf ("%s vence em pontos turísticos!\n", (tour1 > tour2) ? pais1 : pais2);
         else
             printf ("Empate!\n");
         break;
 
     case 5:
-        if (dens1 < dens2)
-            printf ("%s tem menor densidade demográfica!\n", pais1);
-        else if (dens2 < dens1)
-            printf ("%s tem menor densidade demográfica!\n", pais2);
+        if (dens1 != dens2)
+            printf ("%s tem menor densidade demográfica!\n", (dens1 < dens2) ? pais1 : pais2);
         else
             printf ("Empate!\n");
         break;
