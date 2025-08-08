@@ -7,10 +7,9 @@ int main ()
     //Variáveis para entrada de Dados;
     char pais1[50] = "Índia";
     char pais2[50] = "China";
-    double area1 = 3287000, area2 = 9600000, pib1 = 3730000000000, pib2 = 17700000000000;
-    long long int pop1 = 1428000000, pop2 = 1410000000;
-    int tour1 = 57, tour2 = 57;
-    
+    double area1, area2, pib1, pib2;
+    long long int pop1, pop2;
+    int tour1, tour2;    
     double dens1, dens2;
 
     printf ("\n---Bem Vindo ao Super Trunfo: Escolhas---\n");
@@ -18,7 +17,6 @@ int main ()
 
     //Dados inseridos pelo usuário para a Carta #1;
 
-    /*
     printf ("\n--- Insira os dados da Carta #1 ---\n");
 
     printf ("\nPaís: ");
@@ -59,7 +57,6 @@ int main ()
     
     printf ("Número de Pontos Turísticos: ");
     scanf  ("%d", &tour2);
-    */
 
     //Cálculo da Densidade demográfica;
     
