@@ -1,0 +1,42 @@
+# Diretórios de build
+bin/
+obj/
+
+# Configurações locais do VS Code
+.vscode/
+
+# Executáveis e DLLs
+*.exe
+*.dll
+*.pdb
+*.cache
+*.log
+
+# Arquivos de backup e temporários
+*.tmp
+*.bak
+*.swp
+*.user
+*.suo
+
+# Configuração de pacotes NuGet
+*.nupkg
+*.nuget.props
+*.nuget.targets
+
+# Configurações do Visual Studio
+*.dbmdl
+*.jfm
+*.aps
+*.vspscc
+*.vssscc
+*.vsp
+*.vsix
+*.vscode
+
+# Configurações de projeto locais
+*.csproj.user
+*.sln.docstates
+
+# Arquivos de publish temporários
+publish/
